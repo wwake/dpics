@@ -10,4 +10,5 @@ Unfortunately, Steve died in 2008, so Bill Wake ([william.wake@acm.org](mailto: 
 
 **History:**
 
+* Oct 10, 2016. Unzip the main zip file. The resulting files will be subject to updates, and the original zip file will be left intact.
 * Oct. 10, 2016. Initial checkin for github. 
