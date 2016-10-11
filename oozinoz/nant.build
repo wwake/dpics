@@ -1,0 +1,728 @@
+<?xml version="1.0"?>
+<project name="Oozinoz build" default="build" basedir=".">
+
+    <description>Build the sample code for "Design Patterns in C#"</description>    
+
+    <property name="debug" value="true"/>
+
+    <!-- Clean out build results; the use of "fileset" here will leave a CVS directory in place -->
+ 
+    <target name="clean">
+        <delete>
+            <fileset>
+                <includes name="bin\*.*"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target description="Early libs" name="EarlyLibs">
+
+        <mkdir dir="bin"/>
+
+        <csc target="library" output="bin\Utilities.dll" debug="${debug}">
+            <sources> 
+                <includes name="lib\Utilities\*.cs"/> 
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\Simulation.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Simulation\*.cs"/>
+            </sources>
+        </csc>
+    </target>
+
+    <target name="build" description="Compile the source code" depends="EarlyLibs">
+     
+        <copy file="nunit\nunit.framework.dll" tofile="bin\nunit.framework.dll" />
+
+        <csc target="library" output="bin\Aster.dll">
+            <sources>
+                <includes name="lib\Aster\*.cs"/>
+            </sources>
+        </csc> 
+
+        <csc target="library" output="bin\BusinessCore.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\BusinessCore\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\Carousel.dll" debug="${debug}">
+            <sources> 
+                <includes name="lib\Carousel\*.cs"/> 
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\Carousel2.dll" debug="${debug}">
+            <sources> 
+                <includes name="lib\Carousel2\*.cs"/> 
+            </sources>
+        </csc>
+
+
+        <csc target="library" output="bin\Chemicals.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Chemicals\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\BusinessCore.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\Controllers.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Controllers\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\Credit.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Credit\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\CreditCanada.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\CreditCanada\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Credit.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\DataLayer.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\DataLayer\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Utilities.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\Enumerators.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Enumerators\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Utilities.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\Filters.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Filters\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\Fireworks.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Fireworks\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Aster.dll"/>
+                <includes name="bin\Simulation.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\Functions.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Functions\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\Machines.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Machines\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\OzAster.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\OzAster\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Aster.dll"/>
+                <includes name="bin\BusinessCore.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\Processes.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Processes\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Enumerators.dll"/>
+                <includes name="bin\Utilities.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\Recommendations.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Recommendations\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Fireworks.dll"/>
+                <includes name="bin\Utilities.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\Reservations.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\Reservations\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\RobotInterpreter.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\RobotInterpreter\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Machines.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\RobotInterpreter2.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\RobotInterpreter2\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Machines.dll"/>
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\ShowAccessibility.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\ShowAccessibility\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\ShowConstruction.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\ShowConstruction\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="library" output="bin\ShowProperties.dll" debug="${debug}">
+            <sources>
+                <includes name="lib\ShowProperties\*.cs"/>
+            </sources>
+        </csc>
+ 
+        <csc target="library" output="bin\Testing.dll">
+            <sources> 
+                <includes name="lib\Testing\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Chemicals.dll"/>
+                <includes name="bin\DataLayer.dll"/>
+                <includes name="bin\Enumerators.dll"/>
+                <includes name="bin\Fireworks.dll"/>
+                <includes name="bin\Functions.dll"/>
+                <includes name="bin\Machines.dll"/>
+                <includes name="bin\Processes.dll"/>
+                <includes name="bin\Reservations.dll"/> 
+                <includes name="bin\Simulation.dll"/>
+                <includes name="bin\nunit.framework.dll"/>       
+            </references>
+        </csc>
+
+        <csc target="library" output="bin\UserInterface.dll" debug="${debug}">
+            <sources> 
+                <includes name="lib\UserInterface\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Functions.dll"/>
+                <includes name="bin\Utilities.dll"/>
+            </references>
+        </csc> 
+
+        <csc target="library" output="bin\Visualizations.dll" debug="${debug}"> 
+            <sources>
+                <includes name="lib\Visualizations\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\GuiLayout.exe"> 
+            <sources>
+                <includes name="app\GuiLayout\*.cs"/> 
+            </sources>
+        </csc>
+
+        <csc target="winexe" output="bin\MoveATub.exe"> 
+            <sources>
+                <includes name="app\MoveATub\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\MoveATub2.exe"> 
+            <sources>
+                <includes name="app\MoveATub2\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\PlaceATub.exe"> 
+            <sources>
+                <includes name="app\PlaceATub\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowAdapter.exe"> 
+            <sources>
+                <includes name="app\ShowAdapter\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\DataLayer.dll"/>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowBallistics.exe"> 
+            <sources>
+                <includes name="app\ShowBallistics\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Functions.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowBallistics2.exe"> 
+            <sources>
+                <includes name="app\ShowBallistics2\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Functions.dll"/>
+            </references>
+        </csc>
+        <csc target="winexe" output="bin\ShowBallistics3.exe"> 
+            <sources>
+                <includes name="app\ShowBallistics3\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Functions.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowBallistics4.exe"> 
+            <sources>
+                <includes name="app\ShowBallistics4\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Functions.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowBetaVis.exe" main="ShowBetaVis"> 
+            <sources>
+                <includes name="app\ShowAbstractFactory\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Visualizations.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowBorrowing.exe"> 
+            <sources>
+                <includes name="app\ShowBorrowing\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\DataLayer.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowBorrowing2.exe" > 
+            <sources>
+                <includes name="app\ShowBorrowing2\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\DataLayer.dll"/>
+            </references>
+        </csc>
+
+       <csc target="winexe" output="bin\ShowBrightness.exe"> 
+            <sources>
+                <includes name="app\ShowBrightness\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Functions.dll"/>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowCircle.exe"> 
+            <sources>
+                <includes name="app\ShowCircle\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="exe" output="bin\ShowClient.exe"> 
+            <sources>
+                <includes name="app\ShowClient\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowCommand.exe"> 
+            <sources>
+                <includes name="app\ShowCommand\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="exe" output="bin\ShowComparator.exe"> 
+            <sources>
+                <includes name="app\ShowComparator\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Fireworks.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowConcurrentFor.exe"> 
+            <sources>
+                <includes name="app\ShowConcurrentFor\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\BusinessCore.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowConcurrentMutex.exe"> 
+            <sources>
+                <includes name="app\ShowConcurrentMutex\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\BusinessCore.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowConcurrentWhile.exe"> 
+            <sources>
+                <includes name="app\ShowConcurrentWhile\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\BusinessCore.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowDecorator.exe"> 
+            <sources>
+                <includes name="app\ShowDecorator\*.cs"/>
+            </sources>
+            <references>
+                <includes name="bin\Filters.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowDelegate.exe"> 
+            <sources>
+                <includes name="app\ShowDelegate\*.cs"/>
+            </sources>
+        </csc>
+
+        <csc target="exe" output="bin\ShowDown.exe"> 
+            <sources>
+                <includes name="app\ShowDown\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\RobotInterpreter2.dll"/>
+                <includes name="bin\Machines.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowEnumeration.exe"> 
+            <sources>
+                <includes name="app\ShowEnumeration\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Machines.dll"/> 
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowEnumeration2.exe"> 
+            <sources>
+                <includes name="app\ShowEnumeration2\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Machines.dll"/> 
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowFilters.exe"> 
+            <sources>
+                <includes name="app\ShowFilters\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Filters.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowFlight.exe" main="ShowFlight"> 
+            <sources>
+                <includes name="app\ShowFlight\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Functions.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowFlight2.exe" main="ShowFlight2"> 
+            <sources>
+                <includes name="app\ShowFlight\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Functions.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowFun.exe"> 
+            <sources>
+                <includes name="app\ShowFun\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Functions.dll"/>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowInterpreter.exe"> 
+            <sources>
+                <includes name="app\ShowInterpreter\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\RobotInterpreter.dll"/>
+                <includes name="bin\Machines.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowInterpreterFor.exe"> 
+            <sources>
+                <includes name="app\ShowInterpreterFor\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\RobotInterpreter2.dll"/>
+                <includes name="bin\Machines.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowInterpreterWhile.exe"> 
+            <sources>
+                <includes name="app\ShowInterpreterWhile\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\RobotInterpreter2.dll"/>
+                <includes name="bin\Machines.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowLowerCase.exe"> 
+            <sources>
+                <includes name="app\ShowLowerCase\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Filters.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowMessageBox.exe"> 
+            <sources>
+                <includes name="app\ShowMessageBox\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowNew.exe"> 
+            <sources>
+                <includes name="app\ShowNew\*.cs"/> 
+            </sources>
+        </csc>
+
+        <csc target="exe" output="bin\ShowPlant.exe"> 
+            <sources>
+                <includes name="app\ShowPlant\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Machines.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowPrettyVisitor.exe"> 
+            <sources>
+                <includes name="app\ShowPrettyVisitor\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Processes.dll"/>
+                <includes name="bin\Utilities.dll"/>
+                <includes name="bin\Enumerators.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowProcessEnumeration.exe"> 
+            <sources>
+                <includes name="app\ShowProcessEnumeration\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Enumerators.dll"/>
+                <includes name="bin\Processes.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowProcessEnumeration2.exe"> 
+            <sources>
+                <includes name="app\ShowProcessEnumeration2\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Enumerators.dll"/>
+                <includes name="bin\Processes.dll"/>
+            </references>
+        </csc>
+  
+        <csc target="winexe" output="bin\ShowProxy.exe"> 
+            <sources>
+                <includes name="app\ShowProxy\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowProxyReader.exe"> 
+            <sources>
+                <includes name="app\ShowProxyReader\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\DataLayer.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowRakeVisitor.exe"> 
+            <sources>
+                <includes name="app\ShowRakeVisitor\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Machines.dll"/>
+                <includes name="bin\Utilities.dll"/>
+                <includes name="bin\Filters.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowRandom.exe"> 
+            <sources>
+                <includes name="app\ShowRandom\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Filters.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowReflection.exe"> 
+            <sources>
+                <includes name="app\ShowReflection\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Fireworks.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowRocketsFromList.exe"> 
+            <sources>
+                <includes name="app\ShowRocketsFromList\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\DataLayer.dll"/>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Fireworks.dll"/>
+            </references>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowRocketsFromTable.exe"> 
+            <sources>
+                <includes name="app\ShowRocketsFromTable\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\DataLayer.dll"/>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowSet.exe"> 
+            <sources>
+                <includes name="app\ShowSet\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Utilities.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowStructs.exe"> 
+            <sources>
+                <includes name="app\ShowStructs\*.cs"/> 
+            </sources>
+        </csc>
+
+        <csc target="exe" output="bin\ShowTimerCommand.exe"> 
+            <sources>
+                <includes name="app\ShowTimerCommand\*.cs"/> 
+            </sources>
+        </csc>
+
+        <csc target="winexe" output="bin\ShowTreeNodeVisitor.exe"> 
+            <sources>
+                <includes name="app\ShowTreeNodeVisitor\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Machines.dll"/>
+                <includes name="bin\UserInterface.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowUnforgiving.exe"> 
+            <sources>
+                <includes name="app\ShowUnforgiving\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\Reservations.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowVisualization.exe" main="ShowVisualization"> 
+            <sources>
+                <includes name="app\ShowAbstractFactory\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Visualizations.dll"/>
+            </references>
+        </csc>
+
+        <csc target="exe" output="bin\ShowVisualization2.exe"> 
+            <sources>
+                <includes name="app\ShowVisualization2\*.cs"/> 
+            </sources>
+            <references>
+                <includes name="bin\UserInterface.dll"/>
+                <includes name="bin\Visualizations.dll"/>
+            </references>
+        </csc>
+
+    </target>
+</project>
