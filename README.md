@@ -1,4 +1,4 @@
-# Code for Design Patterns in C#
+# Code for Design Patterns in C\# 
 From *[Design Patterns in C\#](https://www.amazon.com/exec/obidos/ASIN/0321126971/xp123com)*, by Steve Metsker, ISBN 0321126971. 
 
 The file ``oozinoz_cs_1.04.zip`` contains the original code from the book. 
