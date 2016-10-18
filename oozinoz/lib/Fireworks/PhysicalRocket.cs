@@ -28,6 +28,7 @@ namespace Fireworks
             double _initialFuelVolume = _initialFuelMass / FUEL_DENSITY;
             _totalBurnTime = _initialFuelVolume / (_burnRate * _burnArea);
         }
+
         /// <summary>
         /// The remaining mass of the rocket after burning off a portion
         /// of its fuel.
@@ -40,6 +41,7 @@ namespace Fireworks
             double burntFuelVolume = _burnRate * _burnArea * t;
             return _totalMass - burntFuelVolume * FUEL_DENSITY;
         }
+
         /// <summary>
         /// Calculate thrust with the standard Oozinoz formula.
         /// </summary>
@@ -50,6 +52,7 @@ namespace Fireworks
             if (time > _totalBurnTime) return 0;
             return FUEL_DENSITY * SPECIFIC_IMPULSE * _burnRate * _burnArea;
         }
+
         /// <summary>
         /// Return the time this rocket's fuel burns.
         /// </summary>

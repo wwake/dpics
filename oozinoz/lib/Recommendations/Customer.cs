@@ -37,7 +37,6 @@ namespace Recommendations
         /// properties file.
         /// </summary>
         public static void Main() 
-
         {
             new Customer().GetRecommended();
         }
@@ -54,7 +53,6 @@ namespace Recommendations
         {
             return 1000;
         }
-
 
         private Advisor GetAdvisor()
         {

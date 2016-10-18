@@ -17,6 +17,7 @@ namespace Functions
         {
             _constant = constant;
         }
+
         /// <summary>
         /// Return this object's constant value.
         /// </summary>

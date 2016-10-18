@@ -15,6 +15,7 @@ namespace Functions
         public T() : base (new Frapper[]{})
         {
         }
+
         /// <summary>
         /// Return the current value of t.
         /// </summary>

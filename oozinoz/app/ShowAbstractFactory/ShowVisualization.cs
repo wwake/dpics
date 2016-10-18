@@ -1,4 +1,3 @@
-using System;
 using System.Windows.Forms;
 using UserInterface;
 using Visualizations;
@@ -12,7 +11,7 @@ public class ShowVisualization
     /// <summary>
     /// The main entry point for the application.
     /// </summary> 
-    static void Main() 
+    public static void Main()
     {
         Application.Run(new Visualization(UI.NORMAL));
     }

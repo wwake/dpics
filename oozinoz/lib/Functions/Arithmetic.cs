@@ -17,6 +17,7 @@ namespace Functions
         {
             _op = op;
         }
+
         /// <summary>
         /// Return an arithmetic operation (as indicated in the constructor) 
         /// applied to the source functions' values at time t.

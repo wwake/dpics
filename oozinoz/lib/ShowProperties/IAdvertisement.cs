@@ -1,4 +1,5 @@
 using System; 
+
 /// <summary>
 /// Show an interface that could, but doesn't, use
 /// properties.

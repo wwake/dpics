@@ -17,6 +17,7 @@ namespace Chemicals
             _chemicals["saltpeter"] = new Chemical("Saltpeter", "KN03", 101);
             //...
         }
+
         /// <summary>
         /// Return the Chemical object for the given name.
         /// </summary>

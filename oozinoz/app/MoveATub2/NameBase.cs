@@ -18,6 +18,7 @@ public class NameBase
                                "Assembler-2301",
                                "Fuser-2101"};
     }
+
     // a table of tub->machine
     internal static Hashtable TubMachine()
     {
@@ -32,11 +33,13 @@ public class NameBase
         }
         return _tubMachine;
     } 
+
     // find machine for a tub
     internal static string Machine(string tubName)
     {
         return (string) _tubMachine[tubName];
     }
+
     // find tubs at a machine
     internal static IList TubNames(string machineName)
     {

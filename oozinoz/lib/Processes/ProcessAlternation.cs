@@ -15,6 +15,7 @@ namespace Processes
         public ProcessAlternation(String name) : base(name)
         {
         }
+
         /// <summary>
         /// Create an alternation with the given name and containing 
         /// the given subprocesses.
@@ -26,6 +27,7 @@ namespace Processes
             params ProcessComponent[] subprocesses) : base (name, subprocesses)
         {
         }
+
         /// <summary>
         /// Create an alternation with the given name and containing 
         /// the given subprocesses.
@@ -36,6 +38,7 @@ namespace Processes
             base(name, subprocesses)
         {
         }
+
         /// <summary>
         /// This hook lets visitors add behaviors to the process
         /// composite. The point here is to call back the visitor

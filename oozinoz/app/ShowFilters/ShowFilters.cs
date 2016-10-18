@@ -1,12 +1,13 @@
 using System;
 using System.IO;
 using Filters;
+
 /// <summary>
 /// This class shows how to compose a few filters.
 /// </summary>
 public class ShowFilters
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         if (args.Length < 2)
         {

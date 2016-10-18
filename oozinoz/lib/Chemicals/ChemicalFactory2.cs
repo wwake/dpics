@@ -16,6 +16,7 @@ namespace Chemicals
             private String _name;
             private String _symbol;
             private double _atomicWeight;
+
             internal ChemicalImpl (
                 String name, String symbol, double atomicWeight)
             {
@@ -23,19 +24,23 @@ namespace Chemicals
                 _symbol = symbol;
                 _atomicWeight = atomicWeight;
             }
+
             public string Name
             {
                 get { return _name; }
             }
+            
             public string Symbol
             {
                 get { return _symbol; }
             }
+            
             public double AtomicWeight
             {
                 get { return _atomicWeight; }
             }
         }
+
         static ChemicalFactory2 ()
         {          
             _chemicals["carbon"] = new ChemicalImpl("Carbon", "C", 12);
@@ -43,6 +48,7 @@ namespace Chemicals
             _chemicals["saltpeter"] = new ChemicalImpl("Saltpeter", "KN03", 101);
             //...
         }
+
         /// <summary>
         /// Return the IChemical object for the given name.
         /// </summary>

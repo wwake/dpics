@@ -15,6 +15,7 @@ namespace Processes
         public ProcessSequence(String name) : base(name)
         {
         }
+
         /// <summary>
         /// Create a sequence with the given name and containing 
         /// the given subprocesses.
@@ -26,6 +27,7 @@ namespace Processes
             base(name, subprocesses)
         {
         }
+
         /// <summary>
         /// Create a sequence with the given name and containing 
         /// the given subprocesses.
@@ -36,6 +38,7 @@ namespace Processes
             base(name, subprocesses)
         {
         }
+
         /// <summary>
         /// This hook lets visitors add behaviors to the process
         /// composite. The point here is to call back the visitor

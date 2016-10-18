@@ -9,10 +9,12 @@ namespace Machines
 	public abstract class MachinePlanner 
 	{
         protected Machine _machine;
-		public MachinePlanner(Machine m)
+		
+        public MachinePlanner(Machine m)
 		{
 			_machine = m;
 		}
+
         public abstract DateTime GetAvailable 
         {
             get;

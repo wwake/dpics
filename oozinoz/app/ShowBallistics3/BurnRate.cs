@@ -1,5 +1,4 @@
 using System;
-using System.Windows.Forms;
 
 /// <summary>
 /// This version of TpeakFunction depends on a Tpeak object instead
@@ -8,6 +7,7 @@ using System.Windows.Forms;
 public abstract class TpeakFunction
 {
     protected Tpeak _tPeak;
+
     /// <summary>
     /// Create a function that depends on a peak value.
     /// </summary>
@@ -16,8 +16,10 @@ public abstract class TpeakFunction
     {
         _tPeak = tPeak;
     }
+
     public abstract double F(double t);
 }
+
 /// <summary>
 /// This is the MVC version of BurnRate.
 /// </summary>
@@ -26,6 +28,7 @@ public class BurnRate : TpeakFunction
     public BurnRate(Tpeak tPeak) : base(tPeak)
     {
     }
+
     /// <summary>
     /// Burn rate as a function of time.
     /// </summary>
@@ -35,6 +38,7 @@ public class BurnRate : TpeakFunction
     {
         return F(t, (double) _tPeak.Value);
     }
+    
     /// <summary>
     /// Burn rate as a function of time and tPeak.
     /// </summary>
@@ -46,6 +50,7 @@ public class BurnRate : TpeakFunction
         return .5 * Math.Pow(25, -Math.Pow((t - tPeak), 2));
     }
 }
+
 /// <summary>
 /// The thrust for a rocket is a chemical equation (from
 /// the Observer chapter.)
@@ -55,6 +60,7 @@ public class Thrust : TpeakFunction
     public Thrust(Tpeak tPeak) : base(tPeak)
     {
     }
+
     /// <summary>
     /// Thrust as a function of time.
     /// </summary>
@@ -64,6 +70,7 @@ public class Thrust : TpeakFunction
     {
         return F(t, (double) _tPeak.Value);
     }
+    
     /// <summary>
     /// Thrust as a function of time and tPeak.
     /// </summary>

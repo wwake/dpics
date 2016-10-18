@@ -8,6 +8,7 @@ namespace Filters
     public class TitleCaseFilter : OozinozFilter 
     {
         protected bool inWhite = true;
+
         /// <summary>
         /// Construct a filter that pass title case characters
         /// to the supplied writer.
@@ -29,6 +30,7 @@ namespace Filters
                 : Char.ToLower(c));
             inWhite = Char.IsWhiteSpace(c) || c == '\"';
         }
+
         /// <summary>
         /// Override this method just to note that it causes a return to
         /// whitespace.

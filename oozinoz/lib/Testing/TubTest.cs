@@ -1,4 +1,3 @@
-using System;
 using NUnit.Framework;
 using Machines;
 
@@ -19,13 +18,14 @@ namespace Testing
             Machine m2 = new Machine(2);
             // place the tub on m1
             t.Location = m1;
-            Assertion.AssertEquals(1, m1.GetTubs().Count);
+            Assert.AreEqual(1, m1.GetTubs().Count);
             // move the tub by adding it to m2
             m2.AddTub(t);
-            Assertion.AssertEquals(m2, t.Location);
-            Assertion.AssertEquals(0, m1.GetTubs().Count);
-            Assertion.AssertEquals(1, m2.GetTubs().Count);
+            Assert.AreEqual(m2, t.Location);
+            Assert.AreEqual(0, m1.GetTubs().Count);
+            Assert.AreEqual(1, m2.GetTubs().Count);
         }
+
         [Test]
         public void TestLocationChange() 
         {
@@ -35,12 +35,12 @@ namespace Testing
             Machine m2 = new Machine(1002);
             // place the tub on m1
             t.Location = m1;
-            Assertion.Assert(m1.GetTubs().Contains(t));
-            Assertion.Assert(!m2.GetTubs().Contains(t));
+            Assert.IsTrue(m1.GetTubs().Contains(t));
+            Assert.IsFalse(m2.GetTubs().Contains(t));
             // move the tub
             t.Location = m2;
-            Assertion.Assert(!m1.GetTubs().Contains(t));
-            Assertion.Assert(m2.GetTubs().Contains(t));
+            Assert.IsFalse(m1.GetTubs().Contains(t));
+            Assert.IsTrue(m2.GetTubs().Contains(t));
         }
 	}
 }

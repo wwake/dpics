@@ -15,6 +15,7 @@ namespace Fireworks
         public Rocket()
         {
         }
+
         /// <summary>
         /// Create a rocket with all its expected properties.
         /// </summary>
@@ -29,6 +30,7 @@ namespace Fireworks
             Apogee = apogee;
             Thrust = thrust;
         }
+
         /// <summary>
         /// The height (in meters) that the rocket is expected to reach.
         /// </summary>
@@ -43,6 +45,7 @@ namespace Fireworks
                 _apogee = value;
             }
         }
+
         /// <summary>
         /// The rated thrust (or force, in newtons) of this rocket.
         /// </summary>

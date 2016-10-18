@@ -15,6 +15,7 @@ namespace Controllers
         public abstract void StopProcess();
         public abstract void ConveyIn();
         public abstract void ConveyOut();
+
         public void Shutdown() 
         {
             StopProcess();

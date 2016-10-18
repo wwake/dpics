@@ -14,6 +14,7 @@ public class BetaUI : UI
         Font f = Font;
         _font = new Font(f, f.Style ^ FontStyle.Italic);
     }
+
     /// <summary>
     /// Create a standard Ok! (or affirmation) button.
     /// </summary>
@@ -24,6 +25,7 @@ public class BetaUI : UI
         b.Image = GetImage("cherry-large.gif");
         return b;
     }
+    
     /// <summary>
     /// Create a standard Cancel! (or negation) button.
     /// </summary>

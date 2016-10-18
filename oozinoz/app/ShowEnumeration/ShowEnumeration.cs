@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Machines;
+
 /// <summary>
 /// Show enumeration with 'foreach'.
 /// </summary>

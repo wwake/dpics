@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
 namespace Utilities
@@ -35,6 +34,7 @@ namespace Utilities
                     return path;
                 }
             }
+
             // How 'bout relative to where the bin files are?
             Assembly a = Assembly.GetAssembly(typeof(FileFinder));
             DirectoryInfo thisDir = Directory.GetParent(a.Location);
@@ -46,6 +46,7 @@ namespace Utilities
             {
                 return path;
             }
+            
             // Ok, how 'bout in the top-level directory?
             path = Path.Combine(Path.Combine(@"\oozinoz", dirName), fileName);
             if (File.Exists(path))
@@ -54,7 +55,6 @@ namespace Utilities
             }
             // dang
             throw new Exception("FileFinder.GetFileName() cannot find " + fileName + " in directory " + dirName);
-
         }
     }
 }

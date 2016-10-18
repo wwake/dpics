@@ -14,6 +14,7 @@ namespace Functions
         public Cos(Frapper f) : base (f)
         {
         }
+
         /// <summary>
         /// Return Math.Cos() applied to the source function's value
         /// at time t.

@@ -1,5 +1,6 @@
 using System;
 using Machines;
+
 /// <summary>
 /// This class sets up a challenge in the Composite chapter.
 /// </summary>

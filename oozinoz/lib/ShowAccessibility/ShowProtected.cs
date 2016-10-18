@@ -6,6 +6,7 @@ public class Machine
 {
     protected void Unload() {}
 }
+
 /// <summary>
 /// This class just supports an accessiblity exercise in 
 /// "Introducing Responsibility".

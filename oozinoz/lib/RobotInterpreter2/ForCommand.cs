@@ -39,6 +39,7 @@ namespace RobotInterpreter2
         {
             Execute(_root);
         } 
+
         private void Execute(MachineComponent mc) 
         {
             Machine m = mc as Machine;

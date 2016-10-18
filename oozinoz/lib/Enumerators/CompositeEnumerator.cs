@@ -10,6 +10,7 @@ namespace Enumerators
     {
         protected IEnumerator _childEnumerator;
         protected ComponentEnumerator _subEnumerator;
+
         /// <summary>
         /// Create an enumerator over a component that has children.
         /// </summary>
@@ -20,6 +21,7 @@ namespace Enumerators
         {
             _childEnumerator = children.GetEnumerator();
         }
+
         /// <summary>
         /// Return the current depth of the iteration. Iterators walk
         /// down a tree, so the depth of this iterator is the depth
@@ -35,6 +37,7 @@ namespace Enumerators
             }
             return 0;
         }
+
         /// <summary>
         /// Advances the enumerator.
         /// </summary>
@@ -52,6 +55,7 @@ namespace Enumerators
             }
             return SubenumeratorNext();
         }
+
         /// <summary>
         /// Usually just move to the subiterator's next element. But
         /// if the subiterator doesn't exist or doesn't have a

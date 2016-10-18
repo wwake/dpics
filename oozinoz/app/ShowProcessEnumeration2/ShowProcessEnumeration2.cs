@@ -1,6 +1,7 @@
 using System;
 using Enumerators;
 using Processes;
+
 /// <summary>
 /// This class shows the use of a composite iterator, with the 
 /// example of a fireworks process.

@@ -14,6 +14,7 @@ namespace Functions
         public Exp(Frapper f) : base (f)
         {
         }
+
         /// <summary>
         /// Return Math.Exp() applied to the source function's value
         /// at time t.

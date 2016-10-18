@@ -17,6 +17,7 @@ namespace Reservations
         private String _city;
         private decimal _dollarsPerHead;
         private bool _hasSite;
+
         /// <summary>
         /// Construct a reservation with the given parameters. The
         /// proper way to construct a reservation is with one of the
@@ -43,6 +44,7 @@ namespace Reservations
             _dollarsPerHead = dollarsPerHead;
             _hasSite = hasSite;
         }
+
         /// <summary>
         /// Returns a textual description of this reservation.
         /// </summary>
@@ -62,22 +64,27 @@ namespace Reservations
             sb.Append(_hasSite);
             return sb.ToString();
         }  
+
         /// <summary>
         /// The scheduled or requested date for the event.
         /// </summary>
         public DateTime Date { get { return _date;}}
+
         /// <summary>
         /// The number of headcount the requester will guarantee.
         /// </summary>
         public int Headcount { get { return _headcount;}}
+        
         /// <summary>
         /// The nearest city.
         /// </summary>
         public String City { get { return _city;}}
+        
         /// <summary>
         /// The dollars/head the person will pay.
         /// </summary>
         public decimal DollarsPerHead { get { return _dollarsPerHead;}}
+        
         /// <summary>
         /// Indicates whether the requester has a site in mind for
         /// the event.

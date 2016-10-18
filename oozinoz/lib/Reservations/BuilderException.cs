@@ -15,6 +15,7 @@ namespace Reservations
         public BuilderException() : base()
         {
         }
+
         /// <summary>
         /// Constructs a BuilderException with the 
         /// specified detail message. 

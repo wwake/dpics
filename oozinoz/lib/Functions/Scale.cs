@@ -21,6 +21,7 @@ namespace Functions
         public Scale(double from, double to) : this(new Constant(from), new Constant(to))
         {           
         }
+
         /// <summary>
         /// Construct a Scale that goes from "from" to "to" as
         /// time goes 0 to 1.
@@ -44,6 +45,7 @@ namespace Functions
             base(new Frapper[] { aFrom, a, aTo, bFrom, bTo })
         {            
         }
+
         /// <summary>
         /// 
         /// Construct a Scale that goes from "aFrom" to "aTo" as
@@ -58,6 +60,7 @@ namespace Functions
             this(new Constant(aFrom), a, new Constant(aTo), new Constant(bFrom), new Constant(bTo))
         {
         }
+
         /// <summary>
         /// Return "b" as a linear function that g
         /// to bTo as "a" goes from aFrom to aTo.

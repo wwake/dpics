@@ -1,4 +1,3 @@
-using System;
 /// <summary>
 /// This class just supports a challenge from "Introducing
 /// Construction."
@@ -8,6 +7,7 @@ public class Fuse
 //    private string _name;
 //    public Fuse(string name) { this._name = name; }
 }
+
 /// <summary>
 /// This class just supports a challenge from "Introducing
 /// Construction."

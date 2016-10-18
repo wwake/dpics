@@ -1,5 +1,5 @@
-using System;
 using System.IO;
+using System.Threading;
 
 /// <summary>
 /// Just showing that the idea of composing streams from streams
@@ -13,5 +13,6 @@ public class ShowDecorator
         StreamWriter sw = new StreamWriter(fs);
         sw.WriteLine("a small amount of sample text");
         sw.Close();
+        Thread.Sleep(30000);
     }
 }

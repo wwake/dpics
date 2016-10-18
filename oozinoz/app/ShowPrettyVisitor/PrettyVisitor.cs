@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using Processes;
 using Utilities;
+
 /// <summary>
 /// This class uses the visitor mechanics of the process
 /// hierarchy to add a behavior that pretty-prints a
@@ -18,7 +19,8 @@ public class PrettyVisitor : IProcessVisitor
     public static readonly string INDENT_STRING = "    ";
     private StringBuilder _buf;
     private int _depth;
-    private Set _visited;    
+    private Set _visited;
+
     /// <summary>
     /// Returns a pretty (that is, indented) description of the
     /// supplied process component.
@@ -34,6 +36,7 @@ public class PrettyVisitor : IProcessVisitor
         pc.Accept(this);
         return _buf;
     }
+
     protected void PrintIndentedString(String s)
     {
         for (int i = 0; i < _depth; i++)
@@ -43,6 +46,7 @@ public class PrettyVisitor : IProcessVisitor
         _buf.Append(s);
         _buf.Append("\n");
     }
+
     /// <summary>
     /// Add a step to the output buffer.
     /// </summary>
@@ -51,6 +55,7 @@ public class PrettyVisitor : IProcessVisitor
     {
         PrintIndentedString(s.Name);
     }
+
     /// <summary>
     /// Add an alternation to the output buffer.
     /// </summary>
@@ -59,6 +64,7 @@ public class PrettyVisitor : IProcessVisitor
     {
         VisitComposite("?", a);
     }
+    
     /// <summary>
     /// Add a sequence to the output buffer.
     /// </summary>
@@ -67,6 +73,7 @@ public class PrettyVisitor : IProcessVisitor
     {
         VisitComposite("", s);
     }
+    
     /// <summary>
     /// Print the prefix and name of this composite, and print its 
     /// children. If we've printed this element before, just print 

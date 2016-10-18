@@ -11,6 +11,7 @@ namespace Processes
     public abstract class ProcessComposite  : ProcessComponent
     {
         protected IList _subprocesses;
+
         /// <summary>
         /// This property returns the children of this composite.
         /// </summary>
@@ -21,6 +22,7 @@ namespace Processes
                 return _subprocesses;
             }
         }
+
         /// <summary>
         /// Create a process composite with the given name.
         /// </summary>
@@ -28,6 +30,7 @@ namespace Processes
         public ProcessComposite(String name) : this (name, new ArrayList())
         {
         }
+
         /// <summary>
         /// Create a composite with the given name and containing the
         /// given subprocesses.
@@ -43,6 +46,7 @@ namespace Processes
                 _subprocesses.Add(o);
             }         
         }
+
         /// <summary>
         /// Create a composite with the given name and containing the
         /// given subprocesses.
@@ -53,6 +57,7 @@ namespace Processes
         {
             _subprocesses = subprocesses;
         }
+
         /// <summary>
         /// Add the given component as a child.
         /// </summary>
@@ -61,6 +66,7 @@ namespace Processes
         {
             _subprocesses.Add(c);
         }
+
         /// <summary>
         /// Return an enumerator for this composite.
         /// </summary>
@@ -70,6 +76,7 @@ namespace Processes
         {
             return new CompositeEnumerator(this, _subprocesses, visited);
         }
+
         /// <summary>
         /// Return the number of steps (leaf nodes) in the tree
         /// that this composite represents.

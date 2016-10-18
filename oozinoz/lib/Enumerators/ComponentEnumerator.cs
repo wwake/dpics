@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Utilities;
+
 namespace Enumerators
 {
     /// <summary>
@@ -40,6 +41,7 @@ namespace Enumerators
                 _returnInterior = value;
             }
         }
+
         /// <summary>
         /// Create an enumerator over a node in a composite.
         /// </summary>

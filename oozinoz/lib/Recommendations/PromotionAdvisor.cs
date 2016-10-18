@@ -14,6 +14,7 @@ namespace Recommendations
         public static readonly PromotionAdvisor singleton =
             new PromotionAdvisor();
         private Firework _promoted;
+
         // look for a promoted firework
         private PromotionAdvisor()
         {

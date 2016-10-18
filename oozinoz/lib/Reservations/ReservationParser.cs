@@ -22,6 +22,7 @@ namespace Reservations
     public class ReservationParser 
     {
         private ReservationBuilder _builder;
+
         /// <summary>
         /// Parse a reservation request, passing its information to
         /// the builder.
@@ -59,6 +60,7 @@ namespace Reservations
                 } 
             }
         }
+
         /// <summary>
         /// Create a parser that will pass its results to the specified
         /// builder.

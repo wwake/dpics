@@ -12,6 +12,7 @@ namespace Machines
     {
         private String _id;
         private TubMediator _mediator = TubMediator.SINGLETON;
+
         /// <summary>
         /// Create a tub with the given id and managed by the given
         /// mediator.
@@ -22,6 +23,7 @@ namespace Machines
         {
             _id = id;
         }
+
         /// <summary>
         /// Use a mediator to control getting and setting the location
         /// of this tub. This prevents a tub from ever being modeled as
@@ -38,6 +40,7 @@ namespace Machines
                 _mediator.Set(this, value);
             }
         }
+
         /// <summary>
         /// Return a textual representation of this tub.
         /// </summary>
@@ -46,6 +49,7 @@ namespace Machines
         {
             return _id;
         }
+
         /// <summary>
         /// Return a unique id for this tub.
         /// </summary>
@@ -54,6 +58,7 @@ namespace Machines
         {
             return _id.GetHashCode();
         }
+
         /// <summary>
         /// Return true if, according to business rules, this
         /// component and the supplied object refer to the same

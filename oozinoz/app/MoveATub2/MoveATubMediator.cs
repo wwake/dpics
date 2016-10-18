@@ -10,6 +10,7 @@ public class MoveATubMediator
     private MoveATub2 _gui;
     private String _selectedMachineName;
     private String _selectedTubName;
+
     /// <summary>
     /// Create a mediator for the given MoveATub application.
     /// </summary>
@@ -18,6 +19,7 @@ public class MoveATubMediator
     {
         _gui = gui;
     }
+
     /// <summary>
     /// When the mouse hovers over the calling control, unbold all
     /// the group box texts, and bold the text of the calling
@@ -40,6 +42,7 @@ public class MoveATubMediator
 
         UpdateTubList(c.Text);
     }
+
     // make the tub list show the tubs at the selected machine
     private void UpdateTubList(string machineName)
     {
@@ -49,6 +52,7 @@ public class MoveATubMediator
             _gui.TubList().Items.Add(new ListViewItem(s, 0));
         } 
     }
+
     /// <summary>
     /// Move the selected tub to selected machine.
     /// </summary>
@@ -62,6 +66,7 @@ public class MoveATubMediator
         UpdateTubList(fromMachineName);
         _gui.AssignButton().Enabled = false;
     }
+
     /// <summary>
     /// When the user selects a tub or machine, enable the "assign"
     /// button if both lists have an item selected.

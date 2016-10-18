@@ -1,5 +1,6 @@
 using System;
 using Machines;
+
 namespace Machines
 {
 	/// <summary>
@@ -11,6 +12,7 @@ namespace Machines
 		public ShellPlanner(Machine m) : base (m)
 		{
 		}
+
         /// <summary>
         /// Say when this planner's machine will be available; this
         /// method is not yet actually implemented.

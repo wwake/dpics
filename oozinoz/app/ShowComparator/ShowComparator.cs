@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Fireworks;
+
 /// <summary>
 /// From "Template Method" -- show the use of a comparator in sorting
 /// a collection (of rockets).
@@ -23,6 +24,7 @@ public class ShowComparator
             Console.WriteLine(r);
         }
     }
+
     private class ApogeeCompare : IComparer 
     {
         public int Compare(Object o1, Object o2)

@@ -2,6 +2,7 @@ using System;
 using Filters;
 using Machines;
 using Utilities;
+
 /// <summary>
 /// Show an example of using a RakeVisitor.
 /// </summary>
@@ -16,6 +17,6 @@ public class ShowRakeVisitor
         {
             w.Write(mc.ID.ToString());
         }
-        w.Close(); 
+        w.Close();
     }
 }

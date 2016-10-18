@@ -3,7 +3,6 @@ using System.Data;
 using System.Data.OleDb;
 using System.Collections;
 using System.Reflection;
-using Utilities;
 
 namespace DataLayer
 {
@@ -14,6 +13,7 @@ namespace DataLayer
     /// the reader's resources after the call.
     /// </summary>
     public delegate object BorrowReader(IDataReader reader);
+
     /// <summary>
     /// Provide basic services for accessing the Oozinoz
     /// database.
@@ -26,7 +26,7 @@ namespace DataLayer
         /// and close the reader.
         /// </summary>
         /// <param name="sql">The SQL select statement to execute.</param>
-        /// <param name="method">The method to call that uses a reader.</param>
+        /// <param name="borrower">The method to call that uses a reader.</param>
         /// <returns>The supplied method's return value.</returns>
         public static object LendReader(string sql, BorrowReader borrower) 
         {
@@ -38,20 +38,26 @@ namespace DataLayer
                 return borrower(r);
             }     
         }
+
         /// <summary>
         /// Create and return a connection to the Oozinoz Access
         /// database.
         /// </summary>
         /// <returns>the connection</returns>
         public static OleDbConnection CreateConnection()
-        { 
-            String dbName = FileFinder.GetFileName("db", "oozinoz.mdb");
+        {
             OleDbConnection c = new OleDbConnection();
-            c.ConnectionString = 
-                "Provider=Microsoft.Jet.OLEDB.4.0;" +
-                "Data Source=" + dbName;
+       
+            // String dbName = FileFinder.GetFileName("db", "oozinoz.mdb");
+            // c.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=" + dbName;
+            // Data Source=.\SQLEXPRESS;Initial Catalog=Customers;Integrated Security=True;
+            const string provider = "SQLOLEDB";
+            const string server = ".\\SQLExpress";
+            const string dbName = "oozinoz";
+            c.ConnectionString = string.Format("Provider={0};Server={1};Database={2};Trusted_Connection=Yes;", provider, server, dbName);
             return c;
         }
+
         /// <summary>
         /// Create and return a database adapter for the supplied
         /// select statement.
@@ -61,7 +67,8 @@ namespace DataLayer
         public static OleDbDataAdapter CreateAdapter(string select) 
         {   
             return new OleDbDataAdapter(select, CreateConnection());  
-        }        
+        }   
+     
         /// <summary>
         /// Create and return a DataTable object that holds the results
         /// of the supplied select statement.
@@ -72,6 +79,7 @@ namespace DataLayer
         {   
             return (DataTable) LendReader(select, new BorrowReader(CreateTable));
         } 
+
         // Create a DataTable from the given reader
         internal static object CreateTable(IDataReader reader) 
         {
@@ -104,6 +112,7 @@ namespace DataLayer
             string sel = "SELECT * FROM " + t.Name + " WHERE NAME = '" + name + "'";
             return LendReader(sel, new BorrowReader(new ObjectLoader(t).LoadObject));
         } 
+
         /// <summary>
         /// Find all objects of the given type in the database.
         /// </summary>

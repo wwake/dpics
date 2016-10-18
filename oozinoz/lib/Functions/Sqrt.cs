@@ -14,6 +14,7 @@ namespace Functions
         public Sqrt(Frapper f) : base (f)
         {
         }
+
         /// <summary>
         /// Return Math.Sqrt() applied to the source function's value
         /// at time t.

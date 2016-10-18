@@ -25,6 +25,7 @@ namespace Filters
         {
             this._width = width;
         }
+
         /// <summary>
         /// Determines whether or not to center the output.
         /// </summary>
@@ -39,6 +40,7 @@ namespace Filters
                 _center = value;
             }
         }
+
         /// <summary>
         /// Flush and close the stream.
         /// </summary>
@@ -47,6 +49,7 @@ namespace Filters
             Flush();
             base.Close();
         }
+
         /// <summary>
         /// Write out any characters that were being held, awaiting a full line.
         /// </summary>
@@ -61,6 +64,7 @@ namespace Filters
                 PostLine();
             }
         }
+
         /// <summary>
         /// Write out the characters in the line buffer, optionally centering 
         /// this output.
@@ -77,6 +81,7 @@ namespace Filters
             _writer.Write(lineBuf.ToString());
             _writer.WriteLine();
         }
+
         /// <summary>
         /// Add the word buffer to the line buffer, unless this
         /// would make the line buffer too long. In that case, 
@@ -102,6 +107,7 @@ namespace Filters
                 wordBuf = new StringBuilder();
             }
         }
+
         /// <summary>
         /// Add the given character to the current word buffer, 
         /// unless the character is whitespace. Whitespace marks 

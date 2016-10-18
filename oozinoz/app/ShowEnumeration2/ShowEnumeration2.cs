@@ -1,5 +1,6 @@
 using System;
 using Machines;
+
 /// <summary>
 /// Show manual enumeration;
 /// </summary>

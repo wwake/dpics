@@ -1,5 +1,6 @@
 using System;
 using Machines;
+
 namespace RobotInterpreter
 {
     /// <summary>
@@ -10,6 +11,7 @@ namespace RobotInterpreter
     public class Robot 
     {
         public static readonly Robot singleton = new Robot();
+
         private Robot()
         {
         }

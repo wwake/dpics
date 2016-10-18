@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using Functions;
 using UserInterface;
+
 /// <summary>
 /// This refactored version of ShowFlight contains just a small
 /// Main() method and the X- and Y-functions of a dud's flight.
@@ -12,11 +13,13 @@ public class ShowFlight2
     {
         return t;
     }
+
     private static double Y(double t)
     {
         // y is 0 at t = 0, 1; y is 1 at t = .5
         return 4 * t * (1 - t);
     }
+
     /// <summary>
     /// Show the flight path of a nonexploding aerial shell. 
     /// </summary>

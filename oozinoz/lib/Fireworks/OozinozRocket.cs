@@ -14,14 +14,17 @@ namespace Fireworks
             : base (burnArea, burnRate, fuelMass, totalMass)
 		{
         }
+
         public double GetMass()
         {
             return GetMass(_time);
         }
+
         public double GetThrust()
         {
             return GetThrust(_time);
         }
+
         public void SetSimTime (double time)
         {
             _time = time;

@@ -11,6 +11,7 @@ namespace Machines
         public static readonly TubMediator SINGLETON = new TubMediator();
 
         private Hashtable _tubMachine = new Hashtable();
+
         /// <summary>
         /// Return the machine where a tub is placed.
         /// </summary>
@@ -20,6 +21,7 @@ namespace Machines
         {
             return (Machine) _tubMachine[t];
         }
+        
         /// <summary>
         /// Return a list of the tubs at a machine.
         /// </summary>
@@ -38,6 +40,7 @@ namespace Machines
             }
             return al;
         }
+        
         /// <summary>
         /// Set a tub's location to be the given machine.
         /// </summary>
@@ -49,4 +52,3 @@ namespace Machines
         }
     }
 }
-	 

@@ -47,10 +47,10 @@ namespace BusinessCore
         {
             return new ArrayList(
                 new String[] {
-                                 "Mixer:1201",
-                                 "ShellAssembler:1301",
-                                 "StarPress:1401",
-                                 "UnloadBuffer:1501" } );
+                    "Mixer:1201",
+                    "ShellAssembler:1301",
+                    "StarPress:1401",
+                    "UnloadBuffer:1501" } );
         }
     }
 }

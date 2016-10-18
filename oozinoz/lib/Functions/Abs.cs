@@ -14,6 +14,7 @@ namespace Functions
         public Abs(Frapper f) : base (f)
         {
         }
+
         /// <summary>
         /// Return Math.Abs() applied to the source function's value
         /// at time t.

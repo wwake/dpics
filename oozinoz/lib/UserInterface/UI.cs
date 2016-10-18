@@ -1,7 +1,5 @@
 using System;
 using System.Drawing;
-using System.IO;
-using System.Reflection;
 using System.Windows.Forms;
 using Functions;
 using Utilities;
@@ -16,6 +14,7 @@ namespace UserInterface
         protected Font _font = new Font("Book Antiqua", 18F);
         public static readonly int STANDARD_PAD = 10;
         public static readonly UI NORMAL = new UI();
+
         /// <summary>
         /// Set up a standard font that subclasses can override.
         /// </summary>
@@ -26,6 +25,7 @@ namespace UserInterface
                 return _font;
             }
         }
+
         /// <summary>
         /// Set up a standard pad amount that subclasses can override.
         /// </summary>
@@ -36,6 +36,7 @@ namespace UserInterface
                 return STANDARD_PAD;
             }
         }
+
         /// <summary>
         /// Create a standard Ok! (or affirmation) button.
         /// </summary>
@@ -47,6 +48,7 @@ namespace UserInterface
             b.Text = "Ok!";
             return b;
         }
+
         /// <summary>
         /// Create a standard Cancel! (or negation) button.
         /// </summary>
@@ -72,6 +74,7 @@ namespace UserInterface
             b.TextAlign = ContentAlignment.BottomCenter;
             return b;
         }
+
 		/// <summary>
 		/// Create a panel that adds a standard amount of padding around
 		/// any controls that are added to it.
@@ -84,6 +87,7 @@ namespace UserInterface
 			p.DockPadding.All = Pad;
 			return p;
 		} 
+
 		/// <summary>
 		/// Create a panel that adds a standard amount of padding around
 		/// a given control.
@@ -96,6 +100,7 @@ namespace UserInterface
 			p.Controls.Add(c);
 			return p;
 		}  
+
         /// <summary>
         /// Create a group box that wraps a titled border around a 
         /// given component.
@@ -112,7 +117,8 @@ namespace UserInterface
 			gb.Dock = DockStyle.Fill;
             gb.Controls.Add(control);
             return gb;
-        }        
+        }
+    
         /// <summary>
         /// Create a standard panel for plotting y as a function of
         /// time t.
@@ -126,6 +132,7 @@ namespace UserInterface
             pp.BackColor = Color.White;
             return pp;
         }  
+
         /// <summary>
         /// Create a standard panel for plotting x and y as parametric
         /// equations of time t.
@@ -140,6 +147,7 @@ namespace UserInterface
             pp.BackColor = Color.White;
             return pp;
         }  
+        
         /// <summary>
         /// Create a standard grid for displaying, in particular,
         /// database tables.
@@ -152,6 +160,7 @@ namespace UserInterface
             g.CaptionVisible = false;
             return g;
         }
+        
         /// <summary>
         /// Create a standard list, where each list item has an accompanying
         /// image/icon.
@@ -170,6 +179,7 @@ namespace UserInterface
             lv.SmallImageList = CreateImageList(size, images);
             return lv;
         }
+        
         // Create an ImageList object given the images and the desired
         // size for them.
         protected virtual ImageList CreateImageList (Size size, params Image[] images) 
@@ -183,6 +193,7 @@ namespace UserInterface
             }
             return il; 
         } 
+        
         /// <summary>
         /// This method looks up an image file and returns the image
         /// contained therein. This method expects all images to be

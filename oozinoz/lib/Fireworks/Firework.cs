@@ -10,6 +10,7 @@ namespace Fireworks
         private string _name;
         private double _mass;
         private decimal _price;
+
         /// <summary>
         /// Allow creation of empty objects to support reconstruction
         /// from persistent store.
@@ -17,6 +18,7 @@ namespace Fireworks
         public Firework()
         {
         }
+
         /// <summary>
         /// Create a firework, providing all of its properties.
         /// </summary>
@@ -28,7 +30,8 @@ namespace Fireworks
             Name = name;
             Mass = mass;
             Price = price;
-        }       
+        }     
+  
         /// <summary>
         /// The unique name of this type of firework
         /// </summary>
@@ -43,6 +46,7 @@ namespace Fireworks
                 _name = value;
             }
         }
+
         /// <summary>
         /// The mass, in kilograms, of one instance of this type
         /// </summary>
@@ -57,6 +61,7 @@ namespace Fireworks
                 _mass = value;
             }
         }
+
         /// <summary>
         /// The price (in dollars) of one instance of this type
         /// </summary>
@@ -70,7 +75,8 @@ namespace Fireworks
             {
                 _price = value;
             }
-        }    
+        }  
+  
         /// <summary>
         /// Provide a textual representation of this firework.
         /// </summary>

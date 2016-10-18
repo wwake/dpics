@@ -13,7 +13,8 @@ namespace Testing
         /// <summary>
         /// Test that we disallow a too low figure for dollars/head.
         /// </summary>
-        [ExpectedException(typeof(BuilderException))]
+        [Test]
+        //[ExpectedException(typeof(BuilderException))]
         public void TestLowDollars()
         {
             String sample =
@@ -22,12 +23,15 @@ namespace Testing
                 + "HasSite, false";
             ReservationBuilder b = new UnforgivingBuilder();
             new ReservationParser(b).Parse(sample);
-            Reservation r = b.Build(); // throws BuilderException
+            //Reservation r = b.Build(); // throws BuilderException
+            Assert.Throws<BuilderException>(() => b.Build());
         }
+
         /// <summary>
         /// Test that we disallow a too low figure for headcount.
         /// </summary>
-        [ExpectedException(typeof(BuilderException))]
+        [Test]
+        //[ExpectedException(typeof(BuilderException))]
         public void TestLowHeadCount()
         {
             String s =
@@ -36,13 +40,15 @@ namespace Testing
                 + "HasSite, false";
             ReservationBuilder b = new UnforgivingBuilder();
             new ReservationParser(b).Parse(s);
-            Reservation r = b.Build(); // throws BuilderException
-          
+           // Reservation r = b.Build(); // throws BuilderException
+            Assert.Throws<BuilderException>(() => b.Build());
         }
+        
         /// <summary>
         /// Test that we disallow missing dollars.
         /// </summary>
-        [ExpectedException(typeof(BuilderException))]
+        [Test]
+        //[ExpectedException(typeof(BuilderException))]
         public void TestNoDollars()
         {
             String sample =
@@ -51,12 +57,15 @@ namespace Testing
                 + "HasSite, false";
             ReservationBuilder b = new UnforgivingBuilder();
             new ReservationParser(b).Parse(sample);
-            Reservation r = b.Build(); // throws BuilderException
+            //Reservation r = b.Build(); // throws BuilderException
+            Assert.Throws<BuilderException>(() => b.Build());
         }
+       
         /// <summary>
         /// Test that we disallow missing headcount.
         /// </summary>
-        [ExpectedException(typeof(BuilderException))]
+        [Test]
+        //[ExpectedException(typeof(BuilderException))]
         public void TestNoHeadCount()
         {
             String s =
@@ -65,11 +74,14 @@ namespace Testing
                 + "HasSite, false";
             ReservationBuilder b = new UnforgivingBuilder();
             new ReservationParser(b).Parse(s);
-            Reservation r = b.Build(); // throws BuilderException
+            //Reservation r = b.Build(); // throws BuilderException
+            Assert.Throws<BuilderException>(() => b.Build());
         }
+
         /// <summary>
         /// Test a normal reservation.
         /// </summary>
+        [Test]
         public void TestNormal() 
         {
             String s =
@@ -83,16 +95,18 @@ namespace Testing
             DateTime d = new DateTime(2000, 11, 5);
             d = ReservationBuilder.Futurize(d);
             //
-            Assertion.AssertEquals(d, r.Date);
-            Assertion.AssertEquals(250, r.Headcount);
-            Assertion.AssertEquals("Springfield", r.City);
-            Assertion.AssertEquals(9.95, (double)r.DollarsPerHead, .01);
-            Assertion.AssertEquals(false, r.HasSite);
+            Assert.AreEqual(d, r.Date);
+            Assert.AreEqual(250, r.Headcount);
+            Assert.AreEqual("Springfield", r.City);
+            Assert.AreEqual(9.95, (double)r.DollarsPerHead, .01);
+            Assert.AreEqual(false, r.HasSite);
         }
+     
         /// <summary>
         /// Test that we disallow missing city.
         /// </summary>
-        [ExpectedException(typeof(BuilderException))]
+        [Test]
+        //[ExpectedException(typeof(BuilderException))]
         public void TestUnforgivingNoCity()
         {
             String s =
@@ -101,12 +115,15 @@ namespace Testing
                 + "HasSite, false";
             ReservationBuilder b = new UnforgivingBuilder();
             new ReservationParser(b).Parse(s);
-            Reservation r = b.Build(); // should throw
+           // Reservation r = b.Build(); // should throw
+            Assert.Throws<BuilderException>(() => b.Build());
         }
+        
         /// <summary>
         /// Test that we disallow missing date.
         /// </summary>
-        [ExpectedException(typeof(BuilderException))]
+        [Test]
+        //[ExpectedException(typeof(BuilderException))]
         public void TestUnforgivingNoDate()
         {
             String s =
@@ -115,8 +132,8 @@ namespace Testing
                 + "HasSite, false";
             ReservationBuilder b = new UnforgivingBuilder();
             new ReservationParser(b).Parse(s);
-            Reservation r = b.Build(); // throws BuilderException
-
+          //  Reservation r = b.Build(); // throws BuilderException
+            Assert.Throws<BuilderException>(() => b.Build());
         }
     }
 }

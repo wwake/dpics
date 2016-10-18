@@ -26,6 +26,7 @@ namespace Chemicals
             _symbol = symbol;
             _atomicWeight = atomicWeight;
         }
+
         /// <summary>
         /// The name of this chemical, such as "Saltpeter."
         /// </summary>
@@ -36,6 +37,7 @@ namespace Chemicals
                 return _name;
             }
         }
+
         /// <summary>
         /// The symbol for this chemical, such as "KNO3."
         /// </summary>
@@ -46,6 +48,7 @@ namespace Chemicals
                 return _symbol;
             }
         }
+
         /// <summary>
         /// The atomic weight of this chemical (e.g. 101 for saltpeter).
         /// </summary>
@@ -56,6 +59,7 @@ namespace Chemicals
                 return _atomicWeight;
             }
         }
+
         /// <summary>
         /// Describe this chemical.
         /// </summary>

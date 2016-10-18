@@ -2,6 +2,7 @@ using System;
 using System.Windows.Forms;
 using Functions;
 using UserInterface;
+
 /// <summary>
 /// This class shows off how to create new functions at
 /// runtime, under the pretext of showing the outline of a

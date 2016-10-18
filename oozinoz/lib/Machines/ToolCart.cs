@@ -17,6 +17,7 @@ namespace Machines
         {
             this._responsible = e;
         }
+
         /// <summary>
         /// The engineer who is responsible for tools in
         /// this tool's tool cart.

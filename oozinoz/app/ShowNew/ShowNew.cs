@@ -1,4 +1,5 @@
 using System;
+
 namespace ShowNew
 {
     /// <summary>
@@ -8,6 +9,7 @@ namespace ShowNew
     {
         public double Thrust() { return 1; }         
     } 
+
     /// <summary>
     /// A subclass of DemoRocket -- these object always have a thrust of 2.
     /// </summary>
@@ -20,6 +22,7 @@ namespace ShowNew
         /// <returns>2</returns>
         public new double Thrust() { return 2; }
     } 
+    
     /// <summary>
     /// The straightman in this demo, this class just supplies a method
     /// that prints out a rocket's thrust.
@@ -32,6 +35,7 @@ namespace ShowNew
                 "Adding rocket with thrust " + r.Thrust());
         }
     }
+    
     /// <summary>
     /// This class instantiates a DemoShell and sends it to the Add()
     /// method of a DemoEvent object. The Add() method is expected a DemoRocket

@@ -1,4 +1,3 @@
-using System;
 using NUnit.Framework;
 using Machines;
 
@@ -22,7 +21,7 @@ namespace Testing
          *      /  \
          *     2    3
          */
-         public static MachineComposite Tree()
+        public static MachineComposite Tree()
         {
             Machine m1 = new Machine(1);
             Machine m2 = new Machine(2);
@@ -35,6 +34,7 @@ namespace Testing
             m123.Add(m23);
             return m123;
         }
+
         /// <summary>
         /// Return a tiny process flow that shows a composite that is
         /// not a tree. In this flow m1 contains m2, m2 contains m3,
@@ -74,29 +74,35 @@ namespace Testing
             m3.Add(m2);
             return m1;
         }
+ 
         /// <summary>
         /// Test that we can count leaves.
         /// </summary>
+        [Test]
         public void TestCount() 
         {
-            Assertion.AssertEquals(3, Tree().GetMachineCount());
+            Assert.AreEqual(3, Tree().GetMachineCount());
         }
+
         /// <summary>
         /// Test that a cycle is not a tree.
         /// </summary>
+        [Test]
         public void TestCycle()
         {
-            Assertion.Assert(!Cycle().IsTree());
-            Assertion.Assert(!NonTree().IsTree());
-            Assertion.Assert(Tree().IsTree());
-            Assertion.Assert(!ExampleMachine.Plant().IsTree());
+            Assert.IsFalse(Cycle().IsTree());
+            Assert.IsFalse(NonTree().IsTree());
+            Assert.IsTrue(Tree().IsTree());
+            Assert.IsFalse(ExampleMachine.Plant().IsTree());
         }
+
         /// <summary>
         /// Test that a machine is a tree.
         /// </summary>
+        [Test]
         public void TestOne()
         {
-            Assertion.Assert(new Fuser(1).IsTree());
+            Assert.IsTrue(new Fuser(1).IsTree());
         }
     }
 }

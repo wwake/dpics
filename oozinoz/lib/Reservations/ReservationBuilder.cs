@@ -32,6 +32,7 @@ namespace Reservations
             }
             return outDate;
         }
+
         /// <summary>
         /// Construct a valid reservation from attributes that have
         /// been presumably been set for this builder. Subclasses may
@@ -49,6 +50,7 @@ namespace Reservations
             get { return _city; }
             set { _city = value;}
         }
+
         /// <summary>
         /// The date for a reservation.
         /// </summary>
@@ -57,6 +59,7 @@ namespace Reservations
             get { return _date; }
             set { _date = value;}
         }
+
         /// <summary>
         /// The dollars/head that a customer will pay for a display.
         /// </summary>
@@ -65,6 +68,7 @@ namespace Reservations
             get { return _dollarsPerHead; }
             set { _dollarsPerHead = value;}
         }
+
         /// <summary>
         /// Indicates whether a customer has a site in mind for a
         /// display.
@@ -74,6 +78,7 @@ namespace Reservations
             get { return _hasSite; }
             set { _hasSite = value;}
         }
+
         /// <summary>
         /// The number of people that a customer will guarantee for 
         /// a display.

@@ -1,7 +1,5 @@
-using System;
 using NUnit.Framework; 
 using Fireworks;
-using Simulation;
 
 namespace Testing
 {
@@ -32,13 +30,15 @@ namespace Testing
 
             double bt = burnDepth / burnRate;
             double tol = 0.01;
-            Assertion.AssertEquals("check burn time", bt, r.GetBurnTime(), tol);
+            Assert.AreEqual(bt, r.GetBurnTime(), tol, "check burn time");
 
-            Assertion.AssertEquals("initial mass", totalMass, r.GetMass(0), tol);
-            Assertion.AssertEquals("burnt out mass", totalMass - fuelMass, r.GetMass(bt), tol);
-            Assertion.AssertEquals("half mass", totalMass - fuelMass * .5, r.GetMass(bt/2), tol);
-            Assertion.AssertEquals("thrust", SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate, r.GetThrust(bt/2), tol);
-        }           /// <summary>
+            Assert.AreEqual(totalMass, r.GetMass(0), tol, "initial mass");
+            Assert.AreEqual(totalMass - fuelMass, r.GetMass(bt), tol, "burnt out mass");
+            Assert.AreEqual(totalMass - fuelMass * .5, r.GetMass(bt/2), tol,"half mass");
+            Assert.AreEqual(SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate, r.GetThrust(bt/2), tol, "thrust");
+        }
+        
+        /// <summary>
         /// Test that mass varies linearly from start mass to 0, over the
         /// time it takes the fuel to burn.
         /// </summary>
@@ -59,13 +59,13 @@ namespace Testing
             double tol = 0.01;
 
             or.SetSimTime(0);    
-            Assertion.AssertEquals("initial mass", totalMass, or.GetMass(), tol);
-            Assertion.AssertEquals("thrust", SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate, or.GetThrust(), tol);
+            Assert.AreEqual(totalMass, or.GetMass(), tol, "initial mass");
+            Assert.AreEqual(SPECIFIC_IMPULSE * FUEL_DENSITY * burnArea * burnRate, or.GetThrust(), tol, "thrust");
             
             double bt = burnDepth / burnRate;
             or.SetSimTime(bt * 1.01); 
-            Assertion.AssertEquals("end mass", totalMass - fuelMass, or.GetMass(), tol);
-            Assertion.AssertEquals("thrust", 0, or.GetThrust(), tol);
-        }      
+            Assert.AreEqual(totalMass - fuelMass, or.GetMass(), tol, "end mass");
+            Assert.AreEqual(0, or.GetThrust(), tol, "thrust");
+        }
     }
 }

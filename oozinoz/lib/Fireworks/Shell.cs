@@ -15,6 +15,7 @@ namespace Fireworks
         public Shell()
         {
         }
+
         /// <summary>
         /// Create a shell with all its expected properties
         /// </summary>
@@ -27,6 +28,7 @@ namespace Fireworks
         {
             MuzzleVelocity = muzzleVelocity;
         }
+
         /// <summary>
         /// The speed (in meters/second) of this shell as it leaves 
         /// the mortar.

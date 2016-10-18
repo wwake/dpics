@@ -16,6 +16,7 @@ namespace Processes
         public ProcessStep(String name) : base(name)
         {
         }
+
         /// <summary>
         /// This hook lets visitors add behaviors to the process
         /// composite. The point here is to call back the visitor
@@ -27,6 +28,7 @@ namespace Processes
         {
             v.Visit(this);
         }
+
         /// <summary>
         /// Return an enumerator that will "enumerate" this step,
         /// returning it once.
@@ -38,6 +40,7 @@ namespace Processes
         {
             return new LeafEnumerator(this, visited);
         }
+
         /// <summary>
         /// Return the number of steps in this step, namely 1.
         /// </summary>

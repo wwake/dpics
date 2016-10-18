@@ -11,6 +11,7 @@ namespace Machines
 		public StarPressPlanner(Machine m) : base (m)
 		{
 		}
+
         /// <summary>
         /// Say when this planner's machine will be available; this
         /// method is not yet actually implemented.

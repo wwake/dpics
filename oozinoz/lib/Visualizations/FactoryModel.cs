@@ -27,6 +27,7 @@ namespace Visualizations
             _mementos = new Stack();
             _mementos.Push(new ArrayList());
         }
+
         /// <summary>
         /// Add a machine to the model; the machine starts out at
         /// a default location.
@@ -88,6 +89,7 @@ namespace Visualizations
                 if (RebuildEvent != null) RebuildEvent();
             }
         }
+
         /// <summary>
         /// Add a new configuration.
         /// </summary>
@@ -97,6 +99,7 @@ namespace Visualizations
             _mementos.Push(list);
             if (RebuildEvent != null) RebuildEvent();
         }
+
         /// <summary>
         /// Return the current set of machine locations.
         /// </summary>

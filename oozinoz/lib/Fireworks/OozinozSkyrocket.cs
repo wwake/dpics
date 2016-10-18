@@ -17,6 +17,7 @@ namespace Fireworks
 		{
             _rocket = r;
 		}
+
         /// <summary>
         /// Use a PhysicalRocket object to model a rocket's mass at simulation time.
         /// </summary>

@@ -14,6 +14,7 @@ public class LimitingReader : DataReaderProxy
     public LimitingReader(IDataReader subject) : base (subject)
     {
     }
+
     /// <summary>
     /// Show that we can intercept requests for apogee information.
     /// </summary>

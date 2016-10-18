@@ -22,6 +22,7 @@ public class ShowConcurrentFor
             Console.WriteLine(_list[i]);
         }
     }
+
     /// <summary>
     /// Simulate that a machine comes up while we're iterating
     /// over the list that this routine changes.
@@ -30,6 +31,7 @@ public class ShowConcurrentFor
     {
         _list.Insert(0, "Fuser:1101");
     }
+
     /// <summary>
     /// The main entry point into the program.
     /// </summary>

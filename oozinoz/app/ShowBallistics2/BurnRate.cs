@@ -22,6 +22,7 @@ public abstract class TpeakFunction
         _slider = slider;
         slider.Scroll += new EventHandler(SliderScroll);
     }
+
     public double Tpeak 
     {
         get 
@@ -37,13 +38,16 @@ public abstract class TpeakFunction
             }
         }
     }
+
     private void SliderScroll(object sender, EventArgs e)
     {
         double val = _slider.Value;
         Tpeak = (val - _slider.Minimum) / (_slider.Maximum - _slider.Minimum);
     }
+
     public abstract double F(double t);
 }
+
     /// <summary>
     /// The burn rate for a rocket is a chemical equation (from
     /// the Observer chapter.) This class also provides an example
@@ -70,6 +74,7 @@ public class BurnRate : TpeakFunction
     {
         return F(t, Tpeak);
     }
+
     /// <summary>
     /// Burn rate as a function of time and tPeak.
     /// </summary>
@@ -81,6 +86,7 @@ public class BurnRate : TpeakFunction
         return .5 * Math.Pow(25, -Math.Pow((t - tPeak), 2));
     }
 }
+
     /// <summary>
     /// The thrust for a rocket is a chemical equation (from
     /// the Observer chapter.)
@@ -90,6 +96,7 @@ public class Thrust : TpeakFunction
     public Thrust(double tPeak, TrackBar slider) : base(tPeak, slider)
     {
     }
+
     /// <summary>
     /// Thrust as a function of time.
     /// </summary>
@@ -99,6 +106,7 @@ public class Thrust : TpeakFunction
     {
         return F(t, Tpeak);
     }
+
     /// <summary>
     /// Thrust as a function of time and tPeak.
     /// </summary>

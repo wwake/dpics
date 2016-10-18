@@ -8,6 +8,7 @@ using System.Windows.Forms;
 public abstract class TpeakFunction
 {
     protected PropertyHolder _ph;
+
     /// <summary>
     /// Create a function that depends on a peak value.
     /// </summary>
@@ -16,8 +17,10 @@ public abstract class TpeakFunction
     {
         _ph = ph;
     }
+
     public abstract double F(double t);
 }
+
 /// <summary>
 /// This is the MVC version of BurnRate.
 /// </summary>
@@ -26,6 +29,7 @@ public class BurnRate : TpeakFunction
     public BurnRate(PropertyHolder ph) : base(ph)
     {
     }
+
     /// <summary>
     /// Burn rate as a function of time.
     /// </summary>
@@ -35,6 +39,7 @@ public class BurnRate : TpeakFunction
     {
         return F(t, (double) _ph.Value);
     }
+
     /// <summary>
     /// Burn rate as a function of time and tPeak.
     /// </summary>
@@ -55,6 +60,7 @@ public class Thrust : TpeakFunction
     public Thrust(PropertyHolder ph) : base(ph)
     {
     }
+
     /// <summary>
     /// Thrust as a function of time.
     /// </summary>
@@ -64,6 +70,7 @@ public class Thrust : TpeakFunction
     {
         return F(t, (double) _ph.Value);
     }
+
     /// <summary>
     /// Thrust as a function of time and tPeak.
     /// </summary>

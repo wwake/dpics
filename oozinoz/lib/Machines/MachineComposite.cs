@@ -10,6 +10,7 @@ namespace Machines
     public class MachineComposite : MachineComponent 
     {
         protected IList _components = new ArrayList();
+
         /// <summary>
         /// Support the Visitor pattern.
         /// </summary>
@@ -18,6 +19,7 @@ namespace Machines
         {
             v.Visit(this);
         }
+
         /// <summary>
         /// Add the given component as a child.
         /// </summary>
@@ -26,6 +28,7 @@ namespace Machines
         {
             _components.Add(component);
         }
+
         /// <summary>
         /// Return the number of machines (leaf nodes) in the tree
         /// that this composite represents.
@@ -40,6 +43,7 @@ namespace Machines
             }
             return count;
         }
+
         /// <summary>
         /// Create a composite with the given id.
         /// </summary>
@@ -47,6 +51,7 @@ namespace Machines
         public MachineComposite(int id) : base (id)
         {
         }
+
         /// <summary>
         /// Create a composite with the given id and name.
         /// </summary>
@@ -55,6 +60,7 @@ namespace Machines
         public MachineComposite(int id, string name) : base (id, name)
         {
         }
+
         /// <summary>
         /// This property returns the children of this composite.
         /// </summary>
@@ -65,6 +71,7 @@ namespace Machines
                 return _components;
             }
         }
+
         /// <summary>
         /// Add the given components as children.
         /// </summary>
@@ -76,6 +83,7 @@ namespace Machines
                 _components.Add(children[i]);
             }
         } 
+
         /// <summary>
         /// Return true if this composite is a tree.
         /// </summary>
@@ -93,6 +101,7 @@ namespace Machines
             }
             return true;
         }
+
         /// <summary>
         /// Return a component in this machine graph whose id
         /// matches the provided one.
@@ -115,6 +124,7 @@ namespace Machines
             }
             return null;
         }
+
         /// <summary>
         /// Return a component in this machine graph whose name
         /// matches the provided one.

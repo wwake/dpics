@@ -1,4 +1,3 @@
-using System;
 /// <summary>
 /// A demo that the Observer chapter uses.
 /// </summary>

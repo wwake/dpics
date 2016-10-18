@@ -1,4 +1,5 @@
 using System;
+
 namespace Machines
 {
     /// <summary>
@@ -16,6 +17,7 @@ namespace Machines
         public ShellAssembler(int id) : base (id)
         {
         }
+
         /// <summary>
         /// Provide a planner for this shell assembler.
         /// </summary>

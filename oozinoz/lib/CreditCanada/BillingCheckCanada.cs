@@ -1,5 +1,6 @@
 using System;
 using Credit;
+
 namespace Credit.Canada
 {  
     /// <summary>

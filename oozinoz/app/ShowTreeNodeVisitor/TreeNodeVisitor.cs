@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using Machines;
+
     /// <summary>
     /// This visitor class produces a TreeNode structure that mirrors 
     /// the machine composite that it visits.
@@ -9,6 +10,7 @@ public class TreeNodeVisitor : IMachineVisitor
 {
     private TreeNode _tree = null;
     private TreeNode _current = null;
+
     /// <summary>
     /// The resulting TreeNode object.
     /// </summary>
@@ -19,6 +21,7 @@ public class TreeNodeVisitor : IMachineVisitor
             return _tree;
         }
     }
+
     /// <summary>
     /// Visit a machine: add a TreeNode object to the current spot
     /// in the tree.
@@ -28,6 +31,7 @@ public class TreeNodeVisitor : IMachineVisitor
     {
         AddNode(m);
     }
+
     /// <summary>
     /// Visit a machine composite: add a TreeNode object to the current
     /// spot, make the current spot this new node, visit the composite's
@@ -44,6 +48,7 @@ public class TreeNodeVisitor : IMachineVisitor
         }
         _current = oldCurrent;
     }
+
     /// <summary>
     /// Add a tree node for this component.
     /// </summary>

@@ -12,6 +12,7 @@ namespace Carousel
         public DoorClosed(Door2 door) : base (door)
         {
         }
+
         /// <summary>
         /// Open the door.
         /// </summary>

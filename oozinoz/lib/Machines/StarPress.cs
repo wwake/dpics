@@ -8,6 +8,7 @@ namespace Machines
     public class StarPress : Machine
     {
        // private StarPressPlanner _planner; // refactored out in "Template Method"
+        
         /// <summary>
         /// Create a machine with the given id and with the supplied
         /// parent machine.
@@ -16,6 +17,7 @@ namespace Machines
         public StarPress(int id) : base (id)
         {
         }
+
         /// <summary>
         /// Provide a planner for this star press.
         /// </summary>

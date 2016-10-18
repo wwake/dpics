@@ -14,6 +14,7 @@ namespace Functions
         public Sin(Frapper f) : base (f)
         {
         }
+
         /// <summary>
         /// Return Math.Sin() applied to the source function's value
         /// at time t.

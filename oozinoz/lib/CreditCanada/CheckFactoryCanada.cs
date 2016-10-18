@@ -16,6 +16,7 @@ namespace Credit.Canada
         {
             return new BillingCheckCanada();
         } 
+
         /// <summary>
         /// Return an ICreditCheck object for Canadian customers.
         /// </summary>
@@ -31,6 +32,7 @@ namespace Credit.Canada
                 return new CreditCheckOffline();
             }
         } 
+
         /// <summary>
         /// Return an IShippingCheck object for Canadian customers.
         /// </summary>

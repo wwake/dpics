@@ -1,4 +1,3 @@
-using System;
 using Functions;
 using UserInterface;
 
@@ -18,6 +17,7 @@ public class AlertPlotPanel : PlotPanel
     {
         tp.Change += new ChangeHandler(FunctionChange);
     }
+
     private void FunctionChange()
     {
         Refresh();

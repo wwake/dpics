@@ -18,6 +18,7 @@ public class AlertPlotPanel : PlotPanel
     {
         tf.Change += new EventHandler(FunctionChange);
     }
+
     private void FunctionChange(object sender, EventArgs e)
     {
         Refresh();

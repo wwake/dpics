@@ -17,6 +17,7 @@ namespace Filters
         public SimpleStreamWriter(Stream s) : base (s) 
         {
         }
+
         /// <summary>
         /// This constructor is for convenience; the superclass will create a
         /// FileStream object from the provided path.

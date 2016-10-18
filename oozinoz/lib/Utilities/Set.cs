@@ -9,6 +9,7 @@ namespace Utilities
     public class Set
     {
         private Hashtable h = new Hashtable();
+
         /// <summary>
         /// Return an enumerator for this set.
         /// </summary>
@@ -17,6 +18,7 @@ namespace Utilities
         {
             return h.Keys.GetEnumerator();
         }
+
         /// <summary>
         /// Add the provided object to this set.
         /// </summary>
@@ -25,6 +27,7 @@ namespace Utilities
         {
             h[o] = null;
         }
+
         /// <summary>
         /// Return true if the set contains the presented object.
         /// </summary>

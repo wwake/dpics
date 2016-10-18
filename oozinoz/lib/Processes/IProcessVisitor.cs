@@ -17,11 +17,13 @@ namespace Processes
         /// </summary>
         /// <param name="a">the process alternation to isit</param>
         void Visit(ProcessAlternation a);
+
         /// <summary>
         /// Visit a process sequence.
         /// </summary>
         /// <param name="s">the process sequence to visit</param>
         void Visit(ProcessSequence s);
+        
         /// <summary>
         /// Visit a process step.
         /// </summary>

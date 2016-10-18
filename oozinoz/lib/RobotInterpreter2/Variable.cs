@@ -80,6 +80,7 @@ namespace RobotInterpreter2
         {
             return _value.Eval();
         }
+
         /// <summary>
         /// Returns a string description of this variable.
         /// </summary>

@@ -1,4 +1,3 @@
-using System;
 namespace Filters
 {
     /// <summary>
@@ -20,6 +19,7 @@ namespace Filters
         {
             _writer = writer;
         }  
+
         /// <summary>
         /// Pass this request to the subordinate stream.
         /// </summary>
@@ -36,6 +36,7 @@ namespace Filters
                 Write(c);
             }
         }
+
         /// <summary>
         /// Put a good ol' carriage return out there.
         /// </summary>
@@ -43,6 +44,7 @@ namespace Filters
         {
             _writer.WriteLine();
         }
+
         /// <summary>
         /// Close the inner filter.
         /// </summary>

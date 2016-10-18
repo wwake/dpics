@@ -1,5 +1,6 @@
 using System;
 using Utilities;
+
 /// <summary>
 /// Just a little demo that shows that a set contains only 
 /// different (unequal) elements.

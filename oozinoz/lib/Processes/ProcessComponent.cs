@@ -13,6 +13,7 @@ namespace Processes
     public abstract class ProcessComponent : ICompositeEnumerable
     {
         protected String _name;
+
         /// <summary>
         /// Create a process component with the given name.
         /// </summary>
@@ -21,11 +22,13 @@ namespace Processes
         {
             _name = name;
         }
+
         /// <summary>
         /// Accept a "visitor".
         /// </summary>
         /// <param name="v">the visitor</param>
         public abstract void Accept(IProcessVisitor v);
+
         /// <summary>
         /// Return this component's name.
         /// </summary>
@@ -36,6 +39,7 @@ namespace Processes
                 return _name;
             }
         }
+        
         /// <summary>
         /// Return an enumerator that will safely walk this composite.
         /// </summary>
@@ -44,6 +48,7 @@ namespace Processes
         {
             return GetEnumerator(new Set());
         }
+        
         /// <summary>
         /// Return an appropriate type of component iterator.
         /// </summary>
@@ -62,6 +67,7 @@ namespace Processes
         {
             return GetStepCount(new Hashtable());
         }
+
         /// <summary>
         /// Return the number of leaf node steps in this
         /// composite.
@@ -72,6 +78,7 @@ namespace Processes
         /// composite.
         /// </returns>
         public abstract int GetStepCount(Hashtable visited);
+
         /// <summary>
         /// Return a textual representation of this component.
         /// </summary>

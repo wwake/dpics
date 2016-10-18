@@ -29,6 +29,7 @@ namespace Functions
         {
             _sources = sources;
         }
+
         /// <summary>
         /// Construct a function that decorates the provided source
         /// function.
@@ -38,6 +39,7 @@ namespace Functions
         public Frapper(Frapper f) : this(new Frapper[] { f })
         {   
         }
+
         /// <summary>
         /// The function that subclasses must implement -- see the
         /// subclases for examples.

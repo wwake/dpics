@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Threading;
 using BusinessCore;
+
 /// <summary>
 /// Show the use of the lock of a "mutex" object for ensuring the
 /// "mutual exclusion" of two threads. See "Iterator" for a discussion
@@ -30,6 +31,7 @@ public class ShowConcurrentMutex
             }
         }
     }
+
     public void NewMachineComesUp() 
     {
         lock (_mutex) 
@@ -37,6 +39,7 @@ public class ShowConcurrentMutex
             _list.Insert(0, "Fuser:1101");
         }
     }
+    
     public static void Main() 
     {
         new ShowConcurrentMutex().DisplayUpMachines();

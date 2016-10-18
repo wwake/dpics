@@ -30,6 +30,7 @@ namespace Chemicals
             _atomicWeight = atomicWeight;
             _grams = grams; 
         }
+
         /// <summary>
         /// The name of this substance, such as "Saltpeter."
         /// </summary>
@@ -40,6 +41,7 @@ namespace Chemicals
                 return _name;
             }
         }
+
         /// <summary>
         /// The chemical symbol for this substance, such as "KNO3."
         /// </summary>
@@ -50,6 +52,7 @@ namespace Chemicals
                 return _symbol;
             }
         }
+
         /// <summary>
         /// The atomic weight of this substance (e.g. 101 for saltpeter).
         /// </summary>
@@ -60,6 +63,7 @@ namespace Chemicals
                 return _atomicWeight;
             }
         }
+
         /// <summary>
         /// The mass of this batch of substance.
         /// </summary>
@@ -70,6 +74,7 @@ namespace Chemicals
                 return _grams;
             }
         }
+
         /// <summary>
         /// The number of moles in this batch.
         /// </summary>
