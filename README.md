@@ -12,7 +12,7 @@ The latest code has been updated to a more modern version of C# - but left compa
 Unfortunately, Steve died in 2008, so Bill Wake ([william.wake@acm.org](mailto: william.wake@acm.org)) is maintaining this repository.
 
 **History:**
-
+* Apr 20, 2020. Fix minor typo and signing issues. VS 2012. 
 * Oct 17, 2016. Modernized the code to .Net 4.5 and able to build and run on VS2012 with C# 4.0.
 * Oct 10, 2016. Unzip the main zip file. The resulting files will be subject to updates, and the original zip file will be left intact.
 * Oct. 10, 2016. Initial checkin for github. 
