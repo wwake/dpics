@@ -1,5 +1,5 @@
 /// <summary>
-/// This class just supports an accessiblity exercise in 
+/// This class just supports an accessibility exercise in 
 /// "Introducing Responsibility".
 /// </summary>
 public class Firework

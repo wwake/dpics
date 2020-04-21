@@ -84,6 +84,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\lib\UserInterface\UserInterface.csproj">
       <Name>UserInterface</Name>

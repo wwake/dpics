@@ -10,7 +10,7 @@ public class ShowBetaVis
     /// <summary>
     /// The main entry point for the application.
     /// </summary> 
-    static void Main()
+    public static void Main()
     {
         Application.Run(new Visualization(new BetaUI()));
     }
