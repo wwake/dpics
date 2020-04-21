@@ -12,6 +12,7 @@ The latest code has been updated to a more modern version of C# - but left compa
 Unfortunately, Steve died in 2008, so Bill Wake ([william.wake@acm.org](mailto: william.wake@acm.org)) is maintaining this repository.
 
 **History:**
+* Apr 20, 2020. Confirm that things build under VS 2017. Updated solution, spot checked examples. 
 * Apr 20, 2020. Confirm that things still builder under VS 2015. Updated solution. 
 * Apr 20, 2020. Fix minor typo and signing issues. VS 2012. 
 * Oct 17, 2016. Modernized the code to .Net 4.5 and able to build and run on VS2012 with C# 4.0.
