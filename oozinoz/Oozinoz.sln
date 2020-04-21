@@ -1,5 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "lib\Controllers\Controllers.csproj", "{8E7C9F59-66A5-4866-93E4-0CD1B66ABAA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessCore", "lib\BusinessCore\BusinessCore.csproj", "{42C19F40-2651-43C2-B33B-50B500D6C10E}"
